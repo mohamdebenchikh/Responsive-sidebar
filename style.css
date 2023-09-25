@@ -1,0 +1,254 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+body{
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    background-color: whitesmoke;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 300px;
+    background-color: #111522;
+    transition: all .25s;
+}
+
+.sidebar-header {
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #222233;
+    box-shadow: 0 2px 5px #0002;
+}
+
+.sidebar-brand {
+    display: flex;
+    align-items: center;
+    color: white;
+    gap: 10px;
+    text-decoration: none;
+}
+
+.sidebar-brand span {
+    font-size: 22px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.sidebar-brand i {
+    font-size: 28px;
+}
+
+.sidebar-header .sidebar-toggle {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.sidebar-content {
+    position: relative;
+    padding: 20px 10px;
+}
+
+.sidebar-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.sidebar-item {
+    position: relative;
+    list-style: none;
+    height: 50px;
+}
+
+.tooltip{
+    position: absolute;
+    right: -11px;
+    top: 2px;
+    min-width: 150px;
+    padding: 15px 20px;
+    transform: translateX(100%);
+    font-size: 16px;
+    color: #ceced6;
+    border-radius: 10px;
+    background-color: #222233;
+    box-shadow: 0px 0px 2px #11152225;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+}
+
+.sidebar-close .sidebar-link:hover + .tooltip {
+    opacity: 1;
+} 
+
+.sidebar-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: #ceced6;
+    width: 100%;
+    height: 100%;
+    padding-inline: 25px;
+    border-radius: 12px;
+    font-size: 16px;
+    letter-spacing: .8px;
+    text-transform: uppercase;
+    flex-shrink: 0;
+    flex-wrap: nowrap;
+}
+
+.sidebar-link:hover {
+    color: white;
+    background-color: rgba(75, 92, 129, 0.2);
+}
+
+.sidebar-link:has(input) {
+    color: white;
+    background-color: #4b5c8133;
+}
+
+.sidebar-link .bi {
+    font-size: 20px;
+}
+
+.sidebar-link input {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    height: 100%;
+    width: 100%;
+    font-size: 16px;
+    color: white;
+}
+
+.sidebar-close-icon {
+    display: none;
+}
+
+.sidebar-footer {
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    transition: all .25s;
+}
+
+.profile-card {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 20px;
+    background-color: #222233;
+    flex-shrink: 0;
+    flex-wrap: nowrap;
+    transition: all .25s;
+}
+
+.profile-info {
+    display: flex;
+    font-size: 16px;
+    align-items: center;
+    color: white;
+    gap: 5px;
+    flex-shrink: 0;
+    flex-wrap: nowrap;
+}
+
+.profile-card .username {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 3px;
+}
+
+.profile-card .job-title {
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.profile-image {
+    position: relative;
+    width: 46px;
+}
+
+.profile-image img {
+    position: relative;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.profile-action button {
+    position: relative;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color:white;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+
+.sidebar.sidebar-close {
+    width: 80px;
+}
+
+.sidebar.sidebar-close .sidebar-link span {
+    display: none;
+}
+
+.sidebar.sidebar-close .sidebar-link {
+    padding-inline: 0;
+    justify-content: center;
+}
+
+.sidebar.sidebar-close .sidebar-header {
+    justify-content: center;
+}
+
+.sidebar.sidebar-close .sidebar-brand {
+    display: none;
+}
+
+.sidebar.sidebar-close .sidebar-close-icon {
+    display: block;
+    font-size: 20px;
+}
+
+.sidebar.sidebar-close .sidebar-open-icon {
+    display: none;
+}
+
+
+.sidebar.sidebar.sidebar-close .sidebar-footer .profile-info {
+    display: none;
+}
+
+.sidebar.sidebar.sidebar-close .sidebar-footer {
+    position: fixed;
+    width: 80px;
+}
+
+.sidebar.sidebar.sidebar-close .profile-card {
+    justify-content: center;
+    padding: 20pxpx;
+}
+
